@@ -1,0 +1,189 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz} % For semi-transparent background blocks
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{ulem}
+\usepackage{wasysym}
+
+\usepackage{pbox}
+
+\usepackage[absolute,overlay]{textpos}
+
+% \usetikzlibrary{mindmap,trees}
+
+\usepackage{smartdiagram}
+\usetikzlibrary{shapes.geometric,calc}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes.symbols,positioning}
+\usepackage{metalogo}
+
+\usetikzlibrary{backgrounds, calc, shadows, shadows.blur}
+
+% - 
+% - Singularity
+% -
+% - Long Tail
+% - 
+
+\newcommand\addcurlyshadow[2][]{
+    % #1: Optional aditional tikz options
+    % #2: Name of the node to "decorate"
+    \begin{pgfonlayer}{background}
+        \path[blur shadow={shadow xshift=0pt, shadow yshift=0pt, shadow blur steps=6}, #1]
+        ($(#2.north west)+(.3ex,-.5ex)$)
+        -- ($(#2.south west)+(.5ex,-.7ex)$)
+        .. controls ($(#2.south)!.3!(#2.south west)$) .. (#2.south)
+        .. controls ($(#2.south)!.3!(#2.south east)$) .. ($(#2.south east)+(-.5ex,-.7ex)$)
+        -- ($(#2.north east)+(-.3ex, -.5ex)$)
+        -- cycle;
+   \end{pgfonlayer}
+}
+
+%% \newcommand\addshadow[1][]{
+%%     \begin{tikzpicture}
+%%     \node[draw=black!40, fill=white, rectangle, minimum width=3cm, minimum height=1cm]
+%%     (example1) {
+%%       {#1}
+%%     };
+%%     \addcurlyshadow{example1}
+%%     \end{tikzpicture}
+%% }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Style modifications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme{Berlin}
+
+%%% Fonts %%%
+
+% Change font. Fontspec requires xelatex instead of pdflatex!
+% Font catalog: https://www.tug.dk/FontCatalogue/
+\usepackage{fontspec}
+
+%\setsansfont{Comfortaa}
+%\setsansfont{DejaVu Sans}
+%\setsansfont{Fira Sans}
+
+% Use "Fira Sans Light" as the normal font and the "Fira Sans" for
+% bold fonts
+
+\setsansfont[
+  ItalicFont={Fira Sans Light Italic},
+  BoldFont={Fira Sans},
+  BoldItalicFont={Fira Sans Italic}]{Fira Sans Light}
+
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+
+%%% Slide template %%%
+
+\setbeamertemplate{frames}[default]
+
+% Empty headline / footline
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+
+% Remove navigation icons
+\setbeamertemplate{navigation symbols}{}
+
+%%% Colors %%%
+
+\usecolortheme{crane}
+
+\definecolor{lightgray}{RGB}{220,220,220}
+\definecolor{darkgray}{RGB}{45,45,45}
+%\definecolor{darkblue}{RGB}{0,86,137}
+\definecolor{darkblue}{RGB}{22,90,151} % Blue of the Gießen Website
+\definecolor{lightblue}{RGB}{229, 245, 255}
+
+\definecolor{darkblue}{RGB}{208,29,44}
+
+
+% Use the slide background in block environments                                                                                                      
+\setbeamercolor{title}{fg=white,bg=darkblue}
+\setbeamertemplate{blocks}[default]
+\setbeamercolor{block title}{bg=}
+\setbeamercolor{block body}{bg=lightgray}
+\setbeamercolor{frametitle}{fg=white,bg=darkblue}
+\setbeamerfont{block body}{size=\large}
+\setbeamercolor{itemize item}{fg=black}
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{section number projected}{bg=darkblue,fg=white}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=darkblue}
+
+\addtobeamertemplate{block begin}{\pgfsetfillopacity{0.8}}{\pgfsetfillopacity{1}}
+\addtobeamertemplate{frametitle}{\pgfsetfillopacity{1.0}}{\pgfsetfillopacity{1}}
+\addtobeamertemplate{title page}{\pgfsetfillopacity{1.0}}{\pgfsetfillopacity{1}}
+
+%%% Misc %%%
+
+% Command to place the test (e.g. citation) in the center of the footer
+\newcommand{\setfootercentertext}[1]{
+\setbeamertemplate{footline}{
+  \hspace*{\fill}
+  \raisebox{3mm}[0mm][0mm]{
+    \tiny{#1}}\hspace*{\fill}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------------
+\title{Programmbereich "Informationdienste"}
+%------------------------------------------------------------------------------
+
+\author{\small Konrad U. Förstner}
+
+\institute{ZB MED -- Informationszentrum Lebenswissenschaften \&\\
+  TH Köln}
+
+\date{\scriptsize 
+  Boys day, 28. März 2019\\ \ \\
+  % \includegraphics[width=1.0cm]{images/vcard_qr_code.png}\ \\ \ \\
+  % \includegraphics[width=0.88cm]{images/creative_commons_attribute.png}
+}
+
+\logo{
+  %\includegraphics[height=1.0cm]{images/ZBMED_2017_EN.pdf}
+  %\includegraphics[height=0.8cm]{images/logo_TH-Koeln_CMYK_22pt.eps}
+}
+
+% To spead up compilation
+% See https://tex.stackexchange.com/questions/27351/speed-up-beamer-compile-time
+%\includeonlyframes{current}
+
+\begin{document}
+
+\begin{frame}
+  \begin{center}
+
+    \textbf{Supervised Learning Method}\\
+    \ \\
+
+  \begin{center}
+    \begin{tikzpicture}
+    \node[draw=black!40, fill=white, rectangle, minimum width=3cm, minimum height=1cm]
+    (example) {
+      \includegraphics[width=8.0cm]{images/Overview_Machine_Learning.pdf}
+    };
+    \addcurlyshadow{example}
+    \end{tikzpicture}
+  \end{center}
+
+  Support vector machines, random forests,\\artificial neural networks and more. \\
+  \ \\
+  Using Python, scikit-learn and Jupyter notebooks.\\
+  \ \\
+
+  \scriptsize{by Konrad Förstner, ZB MED -- Information Centre for Life Sciences}
+  \end{center}
+\end{frame}
+
+
+
+\end{document}

@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{tikz} % For semi-transparent background blocks
 \usepackage{hyperref}
@@ -20,12 +20,6 @@
 
 \usetikzlibrary{backgrounds, calc, shadows, shadows.blur}
 
-% - 
-% - Singularity
-% -
-% - Long Tail
-% - 
-
 \newcommand\addcurlyshadow[2][]{
     % #1: Optional aditional tikz options
     % #2: Name of the node to "decorate"
@@ -39,16 +33,6 @@
         -- cycle;
    \end{pgfonlayer}
 }
-
-%% \newcommand\addshadow[1][]{
-%%     \begin{tikzpicture}
-%%     \node[draw=black!40, fill=white, rectangle, minimum width=3cm, minimum height=1cm]
-%%     (example1) {
-%%       {#1}
-%%     };
-%%     \addcurlyshadow{example1}
-%%     \end{tikzpicture}
-%% }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -119,8 +103,6 @@
 \addtobeamertemplate{frametitle}{\pgfsetfillopacity{1.0}}{\pgfsetfillopacity{1}}
 \addtobeamertemplate{title page}{\pgfsetfillopacity{1.0}}{\pgfsetfillopacity{1}}
 
-%%% Misc %%%
-
 % Command to place the test (e.g. citation) in the center of the footer
 \newcommand{\setfootercentertext}[1]{
 \setbeamertemplate{footline}{
@@ -133,43 +115,19 @@
 % Content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%------------------------------------------------------------------------------
-\title{Programmbereich "Informationdienste"}
-%------------------------------------------------------------------------------
-
-\author{\small Konrad U. Förstner}
-
-\institute{ZB MED -- Informationszentrum Lebenswissenschaften \&\\
-  TH Köln}
-
-\date{\scriptsize 
-  Boys day, 28. März 2019\\ \ \\
-  % \includegraphics[width=1.0cm]{images/vcard_qr_code.png}\ \\ \ \\
-  % \includegraphics[width=0.88cm]{images/creative_commons_attribute.png}
-}
-
-\logo{
-  %\includegraphics[height=1.0cm]{images/ZBMED_2017_EN.pdf}
-  %\includegraphics[height=0.8cm]{images/logo_TH-Koeln_CMYK_22pt.eps}
-}
-
-% To spead up compilation
-% See https://tex.stackexchange.com/questions/27351/speed-up-beamer-compile-time
-%\includeonlyframes{current}
-
 \begin{document}
 
 \begin{frame}
   \begin{center}
 
-    \textbf{Supervised Learning Method}\\
+    \textbf{Supervised Machine Learning Methods}\\
     \ \\
 
   \begin{center}
     \begin{tikzpicture}
     \node[draw=black!40, fill=white, rectangle, minimum width=3cm, minimum height=1cm]
     (example) {
-      \includegraphics[width=8.0cm]{images/Overview_Machine_Learning.pdf}
+      \includegraphics[width=8.0cm]{images/classification_and_regression.pdf}
     };
     \addcurlyshadow{example}
     \end{tikzpicture}
@@ -180,10 +138,8 @@
   Using Python, scikit-learn and Jupyter notebooks.\\
   \ \\
 
-  \scriptsize{by Konrad Förstner, ZB MED -- Information Centre for Life Sciences}
+  \scriptsize{by Konrad Förstner, ZB MED -- Information Centre for Life Sciences and TH Köln}
   \end{center}
 \end{frame}
-
-
 
 \end{document}

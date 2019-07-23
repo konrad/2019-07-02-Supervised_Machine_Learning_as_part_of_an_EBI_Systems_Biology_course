@@ -188,28 +188,6 @@
       \path[mindmap,concept color=red,text=white]
       node[concept] {Machine\\learning}
       [clockwise from=110]
-      %% child[concept color=green!50!black] {
-      %%   node[concept] {practical}
-      %%   [clockwise from=90]
-      %%   child { node[concept] {algorithms} }
-      %%   child { node[concept] {data structures} }
-      %%   child { node[concept] {pro\-gramming languages} }
-      %%   child { node[concept] {software engineer\-ing} }
-      %% }  
-      %% child[concept color=blue] {
-      %%   node[concept] {applied}
-      %%   [clockwise from=-30]
-      %%   child { node[concept] {databases} }
-      %%   child { node[concept] {WWW} }
-      %% }
-      %child[concept color=red] { node[concept] {Supervised learning}}
-      
-      %child[concept color=orange] { node[concept] {Unsupervised learning}}
-        %
-        %child[concept color=red] { node[concept] {Dimension reduction}}
-
-        %child [concept color=red] { node[concept] {Regression}} 
-        %child [concept color=red] { node[concept] {Classification}}
       
       child[concept color=orange] { node[concept] {Supervised learning}}
       child[concept color=orange] { node[concept] {Unsuper\-vised learning}}
@@ -269,14 +247,6 @@
     \end{center}    
   \end{block}
 \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Basic workflow of supevised machine learning}
-%%   \begin{center}
-%%     % training - estimating the parameters
-%%     % test
-%%   \end{center}  
-%% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%
 \section{Foundations and terms}
@@ -342,7 +312,7 @@
   \begin{block}{}
     \begin{center}
       \textbf{Overfitting}: Good performance on the training data, poor
-      generliazation to other data.\\      
+      generalization to other data.\\      
     \end{center}
   \end{block}
   \begin{block}{}
@@ -402,23 +372,10 @@
       \item Decision Trees
       \item Artificial neural network (multilayer perceptron)
       \item Genetic Programming
-        % \item Ensemble Methods
       \end{itemize}
     \end{center}    
   \end{block}
 \end{frame}
-
-
-%% \begin{frame}
-%%   \begin{center}
-%%     \begin{block}{}
-%%       What is the best method?\\
-%%       \pause
-%%       It depends.
-%%     \end{block}
-%%   \end{center}    
-%% \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Selected supervised learning methods}
@@ -492,20 +449,6 @@
 \subsection{Linear models}
 %-------------------------
 
-
-%% \begin{frame}
-%%   \frametitle{}
-
-%%   Linear regression finds the parameters w and b that minimize the
-%%   mean squared error between predictions and the true regression
-%%   targets, y, on the training set. The mean squared error is the sum
-%%   of the squared differences between the predictions and the true
-%%   values.\\
-
-%%   The Model is a line (a single feature), a plane (two feature) or a
-%%   hyperplane (three or more features)
-%% \end{frame}
-
 \begin{frame}
   \frametitle{Linear models}
   \begin{block}{}
@@ -564,90 +507,9 @@
   \end{block}
 \end{frame}
 
-
-
-%% \begin{frame}
-%%   \frametitle{Linear models for binary classification}
-
-%%   Linear models can be used for binary classification by
-%%   decision boundary
-
-%%   Different ways to estimate the parameters
-%%   \begin{itemize}
-%%   \item Logistic regression (*)
-%%   \item Linear support vector machines
-%%   \end{itemize}
-  
-%%   (* yes, a classificatio method although called regression)
-  
-%% \end{frame}
-  
-%%   decision boundary
-%%   \begin{itemize}
-%% \item decision boundary (line, plane, hyperplane)
-%% \item different algoristhms available - most common once:
-%% \begin{itemize}
-%% \item logistic regression
-%% \item linear SVMs)
-%% \end{itemize}
-
-%% \begin{frame}
-%%   \frametitle{Advantages and disadvantages}
-%%   \begin{itemize}
-%%   \item Easy to understand
-%%   \item Fast to train
-%%   \item Linear regression has no parameters to choose - easy to use but also
-%%     not way to control model complexity
-%%   \item Only for linear problems
-%%   \end{itemize}
-%% \end{frame}
-
 %-----------------------------------------
 \subsection{Support Vector Machine (SVMs)}
 %-----------------------------------------
-
-%% \begin{frame}
-%%   \frametitle{Support Vector Machine (SVMs)}
-%%   \begin{itemize}
-%%   \item For regression
-%%   \item For binary classification
-%%   \end{itemize}
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Key concept}
-
-%% \begin{itemize}
-%% \item Hyperplane
-%%   \begin{itemize}
-%%   \item The general term for a straight line in a high-dimensional space is a hyperplane
-%%   \end{itemize}
-%% \item Soft margin
-%%   \begin{itemize}
-%%   \item introducing the soft margin necessitates introducing a
-%%     user-specified parameter that controls, roughly, how many examples
-%%     are allowed to violate the separating hyperplane and how far across
-%%     the line they are allowed to go.
-%%   \item allows some data points to push their way through the margin of the
-%%     separating hyperplane without affecting the final result
-%%   \item the soft margin parameter specifies a trade-off between hyper-plane
-%%     violations and the size of the margin.
-%%   \end{itemize}
-%% \item Kernel
-%%   \begin{itemize}
-%%   \item able to handle non-linear data
-%%   \item can be used on data a that are not vectors (important for biological data DNA, Protein etc.)
-%%   \item able to combine data of different types (e.g. transcriptomics and proteomics data)
-%%   \end{itemize}
-%% \item Kernel function
-%%   \begin{itemize}
-%%   \item It is possible to prove that, for any given data set with
-%%     consistent labels (where consistent simply means that the data set
-%%     does not contain two identical objects with opposite labels) there
-%%     exists a kernel function that will allow the data to be linearly
-%%     separated.
-%%   \end{itemize}
-%% \end{itemize}
 
 \begin{frame}
   \frametitle{SVM -- Separeting hyperplan}
@@ -750,26 +612,6 @@
   \end{block}
 \end{frame}
 
-%% \begin{frame}
-%%   \frametitle{Advantages and disadvantages}
-%%   \begin{itemize}
-%%   \item Advantages:
-%%     \begin{itemize}
-%%     \item Decision of classification is transparent / interpretable (Better understandable than SVM / neural networks)
-%%     \item Possible to label more than two classes
-%%     \item Fast
-%%     \end{itemize}
-%%   \item Disadvantages:
-%%     \begin{itemize}
-%%     \item Overfitting! "A crucial aspect to applying decision trees is
-%%       limiting the complexity of the learned trees so that they do not
-%%       overfit the training examples" => Cross-validation on left-out
-%%       training examples should be used to ensure that the trees
-%%       generalize beyond the examples used to construct them.
-%%     \end{itemize}
-%%   \end{itemize}    
-%% \end{frame}
-
 %--------------------------------------
 \subsection{Artificial Neural Networks}
 %--------------------------------------
@@ -801,159 +643,5 @@
     \includegraphics[width=13.0cm]{images/ANN_with_hidden_layer.pdf}
   \end{center}  
 \end{frame}
-
-%%   Alternative Names:
-%%   \begin{itemize}
-%%   \item 
-%%   \item 
-%%   \end{itemize}
-%% 
-
-%% \begin{frame}
-%%   \frametitle{Basics}
-%%   \begin{itemize}
-%%   \item "A feedforward neural network, aka multi-layer perceptron
-%%     (MLP), is a series of logistic regression models stacked on top of
-%%     each other, with the final layer being either another logistic
-%%     regression or a linear regression model, depending on whether we
-%%     are solving a classification or regression problem." (Murphy)
-
-%%   \item "MLPs can be viewed as generalizations of linear models that
-%%     perform multiple stages of processing to come to a decision."
-
-%%   \item ŷ = w$_{\text{0}}$ * x$_{\text{0}}$ + w$_{\text{1}}$ *
-%%     x$_{\text{1}}$ + \ldots{} + w$_{\text{p}}$ * x$_{\text{p}}$ + b
-
-%%     ŷ is a weighted sum of the input features x$_{\text{0}}$ to
-%%     x$_{\text{p}}$, weighted by the learned coefficients w$_{\text{0}}$ to w$_{\text{p}}$
-
-%%   \item This model has a lot more coefficients (also called weights)
-%%     to learn: there is one between every input and every hidden unit
-%%     (which make up the hidden layer), and one between every unit in
-%%     the hidden layer and the output.
-
-%%   \item coefficient = weights
-
-%%   \item rectifying nonlinearity (also known as rectified linear unit
-%%     or relu) or the tangens hyperbolicus (tanh).
-
-%%   \item actication function - e.g sigmoid function
-
-%%   \item weight on edges
-%%   \item bias on nodes
-%%   \end{itemize}
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Perceptrons}
-
-%%   \begin{itemize}
-%%   \item the simplest possible neural network - a single neuron with
-%%     one or more inputs and a processor and a single output
-%%   \item feed-forward
-%%   \item weights of the inputs
-%%   \end{itemize}
-  
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Multi-layer perceptron or a feed-forward network}
-
-%%   \begin{itemize}
-%%   \item "Feed-forward neural networks can also be used for regression
-%%     problems, which require continuous outputs, as opposed to binary
-%%     outputs (0 and 1)"
-
-%% "By replacing the step function with a continuous function, the
-%% neural network outputs a real number."
-%% \end{itemize}
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Backpropagation}
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Parameters influence neural network compelexity}
-
-%%   \begin{itemize}
-%%   \item the number of hidden layers
-%%   \item the number of perceptrons in each hidden layer
-%%   \item the regularization
-%%   \item and others
-
-%%   \item "An important property of neural networks is that their weights are
-%%     set randomly before learning is started, and this random
-%%     initialization affects the model that is learned. That means that
-%%     even when using exactly the same parameters, we can obtain very
-%%     different models when using different random seeds. If the networks
-%%     are large, and their complexity is chosen properly, this should not
-%%     affect accuracy too much, but it is worth keeping in mind
-%%     (particularly for smaller networks)."
-%%   \end{itemize}
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Cost Function / Gradient decent}
-%%   \begin{itemize}
-%%   \item each node can be simple seen as a function
-%%   \end{itemize}  
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Classis example - hand written numbers}
-%%   \begin{itemize}
-%%   \item MNIST database (Modified National Institute of Standards and Technology database)
-%%   \item 28 x 28 pixels
-%%   \item 60,000 training images and 10,000 testing images
-%%   \end{itemize}
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Deep Learning}
-%% \end{frame}
-
-%% %An introduction to deep learning on biological sequence data: examples and solutions"
-
-%% \begin{frame}
-%%   \begin{itemize}
-%%   \item convolutional neural networks (CNN)
-%%   \item recurrent neural networks (RNN) with
-%%   \item long short-term memory cells (LSTM)
-%%   \end{itemize}
-
-%%   "For the prediction of a continuous output, a single linear output
-%%   neuron is typically used."
-%% \end{frame}
-
-%% \begin{frame}
-%%   \frametitle{Convolutional Neural Network}
-%%   \begin{itemize}
-%%   \item "In convolutional neural networks (CNNs) information also flows
-%%     only from the input to the output, layer by layer. They are however
-%%     not fully connected, but instead slide a filter (a set of weights)
-%%     over the input that feeds into a different neuron in the next layer
-%%     each time it is moved as illustrated in"
-%%   \end{itemize}
-%% \end{frame}
-
-
-%% \begin{frame}
-%%   \frametitle{Links}
-%%   \url{http://www.emergentmind.com/neural-network}
-%%   \url{http://playground.tensorflow.org}
-%% \end{frame}
-
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% \section{Example applications in biology}
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% \begin{frame}{}
-%%    \tableofcontents[currentsection]
-%% \end{frame}
-
-% Sequences
-% One-hot encoding
-% - Represent categorial feature as vectors
 
 \end{document}
